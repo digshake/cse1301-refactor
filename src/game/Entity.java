@@ -4,8 +4,6 @@ import edu.princeton.cs.introcs.StdDraw;
 
 public class Entity {
     private double xPosition;
-    private double yPosition;
-    private double size;
 
     public Entity(double x, double y, double size) {
         this.xPosition = x;
@@ -13,20 +11,14 @@ public class Entity {
         this.size = size;
     }
 
+    private double yPosition;
+    private double size;
+
     public void draw() {
         StdDraw.circle(xPosition, yPosition, size);
     }
 
-    public boolean collidesWith(Entity e) {
-        double distance = Math.sqrt(Math.pow(this.xPosition - e.getXPosition(), 2) + Math.pow(this.yPosition - e.getYPosition(), 2));
-        if(distance > this.getSize() + e.getSize()) {
-            return false;
-        } else {
-            return true;
-        }
-    }
-
-    public double getSize() {
+        public double getSize() {
         return this.size;
     }
 
@@ -36,6 +28,15 @@ public class Entity {
 
     public double getYPosition() {
         return this.yPosition;
+    }
+
+    public boolean collidesWith(Entity e) {
+        double distance = Math.sqrt(Math.pow(this.xPosition - e.getXPosition(), 2) + Math.pow(this.yPosition - e.getYPosition(), 2));
+        if(distance > this.getSize() + e.getSize()) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     public void setXPosition(double x) {

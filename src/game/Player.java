@@ -27,7 +27,6 @@ public class Player extends Entity {
             if (StdDraw.isKeyPressed(KeyEvent.VK_SPACE)) {
                 lastFired = now;
                 return true;
-                
             } else {
                 return false;
             }

@@ -1,9 +1,6 @@
 package game;
 
 public class Projectile extends Entity {
-    
-    private double xPosition;
-    private double yPosition;
 
     public Projectile(double x, double y) {
         super(x, y, 0.01);
