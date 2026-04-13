@@ -1,5 +1,6 @@
 package game;
 
+import java.awt.Color;
 import java.util.LinkedList;
 import java.util.List;
 import edu.princeton.cs.introcs.StdDraw;
@@ -82,13 +83,13 @@ public class Game {
         for(int i = 0; i < enemies.size(); i++) {
             Enemy e = enemies.get(i);
             if(e.isFiring() == true) {
-                Projectile p = new Projectile(e.getXPosition(), e.getYPosition() - e.getSize());
+                Projectile p = new Projectile(e.getXPosition(), e.getYPosition() - e.getSize(), Color.RED);
                 enemyProjectiles.add(p);
             }
             
         }
         if(player.isFiring() == true) {
-            Projectile p = new Projectile(player.getXPosition(), player.getYPosition() + player.getSize());
+            Projectile p = new Projectile(player.getXPosition(), player.getYPosition() + player.getSize(), Color.BLACK);
             playerProjectiles.add(p);
         }
     }

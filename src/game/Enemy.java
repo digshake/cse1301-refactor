@@ -1,5 +1,7 @@
 package game;
 
+import java.awt.Color;
+
 public class Enemy extends Entity {
 
     private double xSpeed;
@@ -9,7 +11,7 @@ public class Enemy extends Entity {
     public Enemy() {
         double randomX = Math.random() * 0.9;
         double randomY = Math.random() * 0.8 + 0.15;
-        super(randomX, randomY, 0.03);
+        super(randomX, randomY, 0.03, Color.RED);
         xSpeed = Math.random() * 0.05;
         ySpeed = Math.random() * 0.05;
         lastFired = System.currentTimeMillis();
